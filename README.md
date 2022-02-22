@@ -77,12 +77,29 @@ cp -r ImageTranscription/ ../xournalpp/plugins/; cp ImageTranscription/inkpath.s
 ```
 **RHEL8 / CENTOS / Fedora:**
 
-Install autotrace from source:
+Compile and install [xournalpp](https://github.com/willnilges/xournalpp).
+_I wrote API extensions that might not be available yet on your platform, so you're probably going to have to build from source._
+```
+# From (https://github.com/xournalpp/xournalpp/blob/master/readme/LinuxBuild.md)
+# Download Xournalpp dependencies
 
-Compile and Install Xournalpp from Source
+sudo dnf makecache
+sudo dnf check-update
+sudo dnf update
+sudo dnf install gcc-c++ cmake gtk3-devel libxml2-devel portaudio-devel libsndfile-devel poppler-glib-devel texlive-scheme-basic texlive-dvipng  gettext libzip-devel librsvg2-devel lua-devel luarocks gobject-introspection-devel 
+sudo luarocks install lgi
+# I still need to find a way to install that 'tex(standalone.cls)' package. tlmgr install standalone.cls gives a big scary error message
+
+# Download and Build Xournalpp
+git clone http://github.com/xournalpp/xournalpp.git
+cd xournalpp
+mkdir build
+cd build
+cmake ..
+cmake --build .
 ```
-sudo yum install -y gtk3-devel
-```
+
+
 
 
 ### Plugin (recommended)
