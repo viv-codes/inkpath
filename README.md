@@ -75,6 +75,15 @@ make lua-plugin
 # Copy resulting plugin files to plugin directory
 cp -r ImageTranscription/ ../xournalpp/plugins/; cp ImageTranscription/inkpath.so ../xournalpp/build/src/
 ```
+**RHEL8 / CENTOS / Fedora:**
+
+Install autotrace from source:
+
+Compile and Install Xournalpp from Source
+```
+sudo yum install -y gtk3-devel
+```
+
 
 ### Plugin (recommended)
 
